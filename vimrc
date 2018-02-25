@@ -63,7 +63,7 @@ colorscheme solarized
 " airline
 let g:airline_theme='luna'
 let g:airline_powerline_fonts = 1
-"set guifont=Fira\ Mono\ for\ Powerline
+set guifont=Noto\ Mono\ for\ Powerline:h10
 
 " tagbar
 if has('win32') || has('win64')
