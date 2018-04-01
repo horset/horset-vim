@@ -66,6 +66,13 @@ colorscheme solarized
 let g:airline_theme='luna'
 let g:airline_powerline_fonts = 1
 set guifont=Noto\ Mono\ for\ Powerline:h10
+if has("unix")
+	" https://stackoverflow.com/a/2842811
+	let s:uname = system("uname -s")
+	if s:uname == "Darwin\n"
+		set guifont=Noto\ Mono\ for\ Powerline:h14
+	endif
+endif
 " https://github.com/powerline/fonts/blob/master/NotoMono/Noto%20Mono%20for%20Powerline.ttf
 
 " tagbar
