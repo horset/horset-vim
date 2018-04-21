@@ -86,6 +86,7 @@ nmap <F8> :TagbarToggle<CR>
 let g:vimwiki_list = [{'maxhi': 0, 'css_name': 'style.css', 'auto_export': 0, 'diary_index': 'diary', 'template_default': 'default', 'nested_syntaxes': {}, 'auto_toc': 0, 'auto_tags': 0, 'diary_sort': 'desc', 'path': '$HOME\GoogleDrive\vimwiki/', 'diary_link_fmt':'%Y-%m-%d', 'template_ext': '.tpl', 'syntax': 'markdown', 'custom_wiki2html': '', 'automatic_nested_syntaxes': 1, 'index': 'index', 'diary_header': 'Diary', 'ext': '.md', 'path_html': '$HOME\GoogleDrive\vimwiki_html/', 'temp': 0, 'template_path': '$HOME\GoogleDrive\vimwiki\templates/', 'list_margin': -1, 'diary_rel_path': 'diary/'}]
 
 "vimtex
+" This g:tex_flavor config solves the \include subfiles' file type cannot be identified as tex
 let g:tex_flavor = 'latex'
 if has('win32') || has('win64')
 	let g:vimtex_view_method = 'general'
