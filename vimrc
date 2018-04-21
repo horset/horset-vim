@@ -86,18 +86,31 @@ nmap <F8> :TagbarToggle<CR>
 let g:vimwiki_list = [{'maxhi': 0, 'css_name': 'style.css', 'auto_export': 0, 'diary_index': 'diary', 'template_default': 'default', 'nested_syntaxes': {}, 'auto_toc': 0, 'auto_tags': 0, 'diary_sort': 'desc', 'path': '$HOME\GoogleDrive\vimwiki/', 'diary_link_fmt':'%Y-%m-%d', 'template_ext': '.tpl', 'syntax': 'markdown', 'custom_wiki2html': '', 'automatic_nested_syntaxes': 1, 'index': 'index', 'diary_header': 'Diary', 'ext': '.md', 'path_html': '$HOME\GoogleDrive\vimwiki_html/', 'temp': 0, 'template_path': '$HOME\GoogleDrive\vimwiki\templates/', 'list_margin': -1, 'diary_rel_path': 'diary/'}]
 
 "vimtex
+let g:tex_flavor = 'latex'
 if has('win32') || has('win64')
 	let g:vimtex_view_method = 'general'
 	let g:vimtex_view_general_viewer = 'SumatraPDF'
 	let g:vimtex_view_general_options = '-reuse-instance -forward-search @tex @line @pdf'
-	"let g:vimtex_view_general_options_latexmk = '-reuse-instance'
-	"let g:vimtex_view_general_viewer = 'SumatraPDF'
-	"let g:vimtex_view_general_options
-	"	\ = '-reuse-instance -forward-search @tex @line @pdf'
-	"	\ . ' -inverse-search "gvim --servername ' . v:servername
-	"	\ . ' --remote-send \"^<C-\^>^<C-n^>'
-	"	\ . ':drop \%f^<CR^>:\%l^<CR^>:normal\! zzzv^<CR^>'
-	"	\ . ':execute ''drop '' . fnameescape(''\%f'')^<CR^>'
-	"	\ . ':\%l^<CR^>:normal\! zzzv^<CR^>'
-	"	\ . ':call remote_foreground('''.v:servername.''')^<CR^>^<CR^>\""'
+elseif has("unix")
+	" https://stackoverflow.com/a/2842811
+	let s:uname = system("uname -s")
+	if s:uname == "Darwin\n"
+		let g:vimtex_view_method = 'skim'
+		let g:vimtex_compiler_latexmk = {
+			\ 'backend' : 'jobs',
+			\ 'background' : 1,
+			\ 'build_dir' : '',
+			\ 'callback' : 1,
+			\ 'continuous' : 1,
+			\ 'executable' : 'latexmk',
+			\ 'options' : [
+			\   '-pdf',
+			\   '-verbose',
+			\   '-file-line-error',
+			\   '-synctex=1',
+			\   '-interaction=nonstopmode',
+			\ ],
+			\}
+	endif
 endif
+
