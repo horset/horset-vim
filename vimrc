@@ -4,6 +4,8 @@ set autoindent
 set backspace=indent,eol,start
 set encoding=utf-8
 set fileencoding=utf-8
+" https://stackoverflow.com/a/1878983
+set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 syntax enable
 
 " Key mapping
