@@ -47,7 +47,7 @@ Plug 'tpope/vim-surround'
 Plug 'altercation/vim-colors-solarized'
 Plug 'majutsushi/tagbar'
 Plug 'vimwiki/vimwiki'
-"Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe'
 Plug 'lervag/vimtex'
 
 " List ends here. Plugins become visible to Vim after this call.
