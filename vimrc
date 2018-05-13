@@ -6,6 +6,7 @@ set encoding=utf-8
 set fileencoding=utf-8
 " https://stackoverflow.com/a/1878983
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+set ignorecase
 syntax enable
 
 " Key mapping
@@ -46,6 +47,7 @@ Plug 'Valloric/YouCompleteMe'
 
 Plug 'vimwiki/vimwiki'
 Plug 'lervag/vimtex'
+Plug 'iamcco/markdown-preview.vim'
 
 Plug 'junegunn/seoul256.vim'
 Plug 'vim-airline/vim-airline'
