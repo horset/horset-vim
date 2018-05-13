@@ -44,6 +44,8 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'majutsushi/tagbar'
 Plug 'Valloric/YouCompleteMe'
+Plug 'vim-syntastic/syntastic'
+Plug 'tpope/vim-dispatch'
 
 Plug 'vimwiki/vimwiki'
 Plug 'lervag/vimtex'
